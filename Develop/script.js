@@ -13,7 +13,7 @@ var generateBtn = document.querySelector("#generate");
 
 
 //prompts
-function generatePassword() {
+function generatePassword() 
 var length=prompt("How many total characters do you want? 8-128");
  
 var lengthConfirm = parseInt(passLength);
@@ -35,7 +35,7 @@ var randomPassword = "";
         collectionOfValids[
             Math.floor(Math.random() * collectionOfValids.length)
         ];
-
+      }
 
 
 
