@@ -20,7 +20,12 @@ var generateBtn = document.querySelector("#generate");
 //prompts for character selection
 function generatePassword(){
   var password = "";
-  for (var i = 0; i < passwordOptions.length; i++)
+  for (var i = 0; i < characterlength; i++){
+    var randomletter = (Math.random() * choicearr.length)
+    password = password + choicearr[random];
+}
+return password;
+
 }
 
 function getprompt(){
