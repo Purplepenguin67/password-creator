@@ -1,9 +1,9 @@
 // Assignment code here
 //Creating variables
-var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowercaseletters = "abcdefghijklmnopqrstuvqxyz";
-var numbers = "123456789";
-var specialcharacter = "!@#$%^&*()_+";
+var lowerCaseletters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var upperCaseletters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var specialcharacters = ['@', '%', '+', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.']
+var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 
 
@@ -12,37 +12,25 @@ var generateBtn = document.querySelector("#generate");
 
 
 
-//prompts
+//prompt for length
 function generatePassword() 
-var length=prompt("How many total characters do you want? 8-128");
- 
-var lengthConfirm = parseInt(passLength);
-    console.log(lengthConfirm);
-
-    if (passwordlength < 8 || passwordlength > 128) {
-    
-    }
-
-
-
-
-//password creation
-var randomPassword = "";
- for (var i = 0; i < lengthConfirm; i++) {
-     collectionOfValids[
-         Math.floor(Math.random() * collectionOfValids.length)];
-     randomPassword +=
-        collectionOfValids[
-            Math.floor(Math.random() * collectionOfValids.length)
-        ];
-      }
 
 
 
 
 
 
-        // Write password to the #password input
+
+
+
+    //password creation
+var characters = '';
+    characters += (lowerSelection ? lower : '');
+    characters += (upperSelection ? upper : '');
+    characters += (specialSelection ? special : '');
+    characters += (numberSelection ? numbers : '');
+     
+// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
