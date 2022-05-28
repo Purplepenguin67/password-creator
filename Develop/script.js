@@ -1,4 +1,9 @@
 // Assignment code here
+//Creating variables
+var uppercaseletters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lowercaseletters = 'abcdefghijklmnopqrstuvqxyz';
+var numbers = '123456789';
+var specialcharacter = '!@#$%^&*()_+';
 
 
 // Get references to the #generate element
