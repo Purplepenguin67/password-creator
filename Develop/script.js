@@ -9,6 +9,20 @@ var specialcharacter = '!@#$%^&*()_+';
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+
+
+//prompts
+function generatePassword() {
+var length=prompt(How many total characters do you want? 8-128)
+
+
+
+
+
+
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
