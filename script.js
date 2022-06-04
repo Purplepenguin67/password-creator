@@ -1,6 +1,6 @@
-// Assignment code here
+
 //Creating variable array
-var characterlength = 8;
+
 var choicearray = [];
 
 
@@ -26,7 +26,7 @@ function generatePassword(){
     var random = math.floor(Math.random() * choicearray.length)
     randompassword = password + choicearray[random];
 }
-return password;
+return randompassword;
 
 }
 //Prompts
@@ -34,7 +34,7 @@ function getprompts(){
 
   characterlength = parseint(prompt("Choose how many characters that you would like to include up to 128"));
 
-  if(isNaN(characterlength) || characterlength > 128 ||   characterlength < 8){
+  if(isNaN(characterlength) || characterlength > 128 ||  characterlength < 8){
     return false;
 
   }
@@ -53,16 +53,18 @@ function getprompts(){
   }
   if (confirm("Would you like to include numbers?")) {
     choicearray = choicearray.concat(numbersarray);
+
+
   }
 
 
      
 // Write password to the #password input
 function writePassword() {
-    var password = generatePassword();
+    var randompassword = generaterandomPassword();
     var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = randompassword;
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
