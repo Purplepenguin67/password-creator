@@ -35,42 +35,53 @@ function writePassword() {
 
 //password randomization
 function generatePassword() {
-  var randompassword = "";
-  for (var i = 0; i < characterlength; i++) {
-    var random = math.floor(Math.random() * choicearray.length)
-    randompassword = password + choicearray[random];
+ 
+  console.log (characterlength)
+  if (confirm("Would you like to include lower case letters?")) {
+    choicearray = choicearray.concat(lowerCaselettersarray);
   }
-  return randompassword;
+  if (confirm("Would you like to include upper case letters?")) {
+    choicearray = choicearray.concat(upperCaselettersarray);
+  }
+  if (confirm("Would you like to include special letters?")) {
+    choicearray = choicearray.concat(specialcharactersarray);
+  }
+  if (confirm("Would you like to include numbers?")) {
+    choicearray = choicearray.concat(numbersarray);
+    
+  }
+  console.log (choicearray)
+var randompassword = "";
+  for (var i = 0; i < characterlength; i++) {
+   var random = Math.floor(Math.random() * choicearray.length)
+    //randompassword = password + choicearray[random];
+    console.log (choicearray[random])
+  }
+    return randompassword;
 
 }
 //Prompts
 function getprompts() {
 
-  characterlength = parseint(prompt("Choose how many characters that you would like to include up to 128"));
-    if (isNaN(characterlength) || characterlength > 128 || characterlength < 8) {
+  characterlength = parseInt(prompt("Choose how many characters that you would like to include up to 128"));
+  if (isNaN(characterlength) || characterlength > 128 || characterlength < 8) {
+
     return false;
+
+  }
+  else {
+    return true;
 
   }
 
 }
 
 
-if (confirm("Would you like to include lower case letters?")) {
-  choicearray = choicearray.concat(lowerCaselettersarray);
-}
-if (confirm("Would you like to include upper case letters?")) {
-  choicearray = choicearray.concat(upperCaselettersarray);
-}
-if (confirm("Would you like to include special letters?")) {
-  choicearray = choicearray.concat(specialcharactersarray);
-}
-if (confirm("Would you like to include numbers?")) {
-  choicearray = choicearray.concat(numbersarray);
-}
 
-return true;
 
-}
+//return true;
+
+//}
 
 
 
