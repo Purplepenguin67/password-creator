@@ -1,6 +1,6 @@
 
 //Creating variable array
-
+var characterlength = 8;
 var choicearray = [];
 
 
@@ -10,61 +10,70 @@ var specialcharactersarray = ['@', '%', '+', '!', '#', '$', ':', ',', ')', '(', 
 var numbersarray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 
+// Password input
+function writePassword() {
+  var correctprompts = getprompts();
+  var passwordtext = document.querySelector("#password");
+
+  if (correctprompts) {
+    var newpassword = generatePassword();
+    passwordtext.value = newpassword;
+  } else {
+    passwordtest.value = "";
+
+  }
+
+}
 
 //password randomization
-function generatePassword(){
+function generatePassword() {
   var randompassword = "";
-  for (var i = 0; i < characterlength; i++){
+  for (var i = 0; i < characterlength; i++) {
     var random = math.floor(Math.random() * choicearray.length)
     randompassword = password + choicearray[random];
-}
-return randompassword;
+  }
+  return randompassword;
 
 }
 //Prompts
-function getprompts(){
+function getprompts() {
 
   characterlength = parseint(prompt("Choose how many characters that you would like to include up to 128"));
-
-  if(isNaN(characterlength) || characterlength > 128 ||  characterlength < 8){
+    if (isNaN(characterlength) || characterlength > 128 || characterlength < 8) {
     return false;
 
   }
- 
+
 }
 
 
-  if (confirm("Would you like to include lower case letters?")) {
-    choicearray = choicearray.concat(lowerCaselettersarray);
-  }
-  if (confirm("Would you like to include upper case letters?")) {
-    choicearray = choicearray.concat(upperCaselettersarray);
-  }
-  if (confirm("Would you like to include special letters?")) {
-    choicearray = choicearray.concat(specialcharactersarray);
-  }
-  if (confirm("Would you like to include numbers?")) {
-    choicearray = choicearray.concat(numbersarray);
-
-
-  }
-
-
-     
-// Write password to the #password input
-function writePassword() {
-    var randompassword = generaterandomPassword();
-    var passwordText = document.querySelector("#password");
-
-  passwordText.value = randompassword;
+if (confirm("Would you like to include lower case letters?")) {
+  choicearray = choicearray.concat(lowerCaselettersarray);
 }
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+if (confirm("Would you like to include upper case letters?")) {
+  choicearray = choicearray.concat(upperCaselettersarray);
+}
+if (confirm("Would you like to include special letters?")) {
+  choicearray = choicearray.concat(specialcharactersarray);
+}
+if (confirm("Would you like to include numbers?")) {
+  choicearray = choicearray.concat(numbersarray);
+}
+
+return true;
+
+}
+
+
+
+
+
+
