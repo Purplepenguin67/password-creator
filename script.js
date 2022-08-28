@@ -70,7 +70,7 @@ function getprompts() {
 
   }
   else {
-    return true;
+    return true; 
 
   }
 
